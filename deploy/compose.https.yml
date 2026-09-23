@@ -1,0 +1,9 @@
+# Paths are relative to the first (-f docker-compose.yml) file, i.e. repo root.
+services:
+  web:
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deploy/nginx.https.conf:/etc/nginx/conf.d/default.conf:ro
+      - /etc/letsencrypt:/etc/letsencrypt:ro
